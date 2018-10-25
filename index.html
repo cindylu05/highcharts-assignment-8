@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Female Labor Force Comparison </title>
+
+  <link rel="stylesheet" href="styles/new.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/themes/grid-light.js"></script>
+</head>
+
+<body>
+
+  <h1> Female Labor Force Comparison </h1>
+  <p> Created by: Cindy Lu </p>
+  <p> Looking at a country's proportion of waged workers gives insight into the socio-economic status of that country. By analyzing such data as it pertains to women provides hints at the role and treatment of those women. Both these factors, when considered together, suggest strong implications on the economic advancement of a country as well as the status of women. Such data can be used for many practical applications, such as working toward greater female empowerment and gender equality. </p>
+
+  <div id="container"></div>
+
+  <script>
+    Highcharts.chart('container', {
+      chart: {
+        type: 'bar'
+      },
+      title: {
+        text: 'Waged Female Workers'
+      },
+      subtitle: {
+        text: 'Source: databank.worldbank.org'
+      },
+      xAxis: {
+        categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
+        title: {
+            text: null
+          }
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: 'Waged Female Workers (%)',
+            align: 'high'
+          },
+          labels: {
+            overflow: 'justify'
+          }
+        },
+        tooltip: {
+          valueSuffix: ' millions'
+        },
+        plotOptions: {
+          bar: {
+            dataLabels: {
+                enabled: true
+              }
+            }
+          },
+          legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 80,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+          },
+          credits: {
+            enabled: false
+          },
+          series: [{
+            name: 'Vietnam',
+            data: [26.2, 27.2, 28.3, 29.1, 29.4, 30.6, 34.2, 35.7, 35.8]
+          }, {
+            name: 'United States of America',
+            data: [92.3, 92.2, 92.4, 92.3, 92.4, 92.5, 92.6, 92.7, 92.8]
+          }]
+        });
+  </script>
+
+  <p> Source: <a href="http://databank.worldbank.org/data/source/world-development-indicators">The World Bank DataBank</a>, United States and Vietnam, Waged and Salaried Workers (Female), 2009-2017 </p>
+
+  <div id="secondchart"></div>
+
+  <script>
+    Highcharts.chart('secondchart', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Female to Male Labor Participation'
+      },
+      subtitle: {
+        text: 'Source: databank.worldbank.org'
+      },
+      xAxis: {
+        categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
+      },
+      yAxis: {
+        title: {
+          text: 'Female to Male Labor Ratio (%)'
+        }
+      },
+      plotOptions: {
+        line: {
+          dataLabels: {
+            enabled: true
+          },
+          enableMouseTracking: false
+        }
+      },
+      series: [{
+        name: 'Vietnam',
+        data: [88.8, 88.3, 88.0, 88.7, 88.9, 89.0, 88.1, 88.3, 88.1]
+      }, {
+        name: 'United States of America',
+        data: [82.2, 82.3, 82.4, 82.2, 82.0, 82.3, 82.0, 82.0, 82.5]
+      }]
+    });
+  </script>
+
+  <p> Source: <a href="http://databank.worldbank.org/data/source/world-development-indicators">The World Bank DataBank</a>, United States and Vietnam, Ratio of Female to Male Labor Force Participation Rate (National Estimate), 2009-2017 </p>
+
+</body>
+</html>
